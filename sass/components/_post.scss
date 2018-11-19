@@ -1,0 +1,269 @@
+.post {
+
+    @include respond(phone) {
+        margin: 0 2rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: inherit;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-left: 2rem;
+        font-weight: $fw-bold;
+    }
+
+    &__content {
+        display: table;
+        border-spacing: 2rem;
+    }
+
+    &__left {
+        display: table-cell;
+        @include respond(phone){
+            display: table-row;
+        }
+    }
+
+    &__image {
+        width: 15rem;
+        
+        @include respond(phone){
+            width: 100%;
+        }
+    }
+
+    &__right {
+        display: table-cell;
+        vertical-align: top;
+        @include respond(phone){
+            display: table-row;
+        }
+    }
+
+    &__text {
+        color: $color-grey-dark-2;
+    }
+
+    &__details {
+        margin-top: 0.5rem;
+        color: $color-grey-dark-1;
+
+        @include respond(phone) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__details > * {
+        float: left;
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+
+        @include respond(phone) {
+            float:none;
+            display: inline-block;
+        }
+    }
+
+    &--blog {        
+        background-color: $color-white;
+        padding: 4rem 3rem;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        transition: all 0.3s;
+        
+        @include respond(phone){
+            padding: 3rem 1.5rem;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1.5rem 2.5rem rgba($color-black, 0.2);
+        }
+    }
+
+
+    &--project {
+        height: 24rem;
+        position: relative;
+        perspective: 150rem;
+
+        @include respond(tab-port) {
+            height: 30rem;
+        }
+    }
+
+    &__side {
+        height: 24rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: all 1s;
+
+        @include respond(tab-port) {
+            height: 30rem;
+        }
+    }
+
+    &__side--front {
+        background-color: $color-white;
+        padding: 4rem 3rem;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+    &__side--back {
+        transform: rotateX(180deg);
+
+        background: linear-gradient(to right bottom, $color-primary-2, $color-primary-1);
+        overflow: hidden;
+    }
+
+    &--project:hover {
+        .post__side--front {
+            transform: rotateX(180deg);
+        }
+
+        .post__side--back {
+            transform: rotateX(360deg);
+        }
+    }
+
+
+    &--project &__title {
+        display: inline-block;
+    }
+
+    &__status {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: $fw-middle;
+        color: $color-white;
+        line-height: 1;
+        padding: 1px 1rem;
+        margin-left: 2rem;
+        
+
+        &--live {
+            background: $color-primary-1;
+        }
+
+        &--shutdown {
+            background: $color-shutdown;
+        }
+    }
+
+    &--project &__details {
+        margin-top: 1.5rem;
+    }
+
+    //  Backside card
+    &__content-back {
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%);
+    }
+
+    &__back-title {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: $fw-light;
+        color: $color-white;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    &__technologies {
+        font-weight: $fw-middle;
+    }
+
+    &__button {
+        margin-top: 2.5rem;
+        display: inline-block;
+        z-index: 1000;
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__back-icon {
+        font-size: 40rem;
+        color: rgba($color-white, 0.65);
+
+        position: absolute;
+        top: -3rem;
+        right: -6rem;
+    }
+
+    //  RESPONSIVE STYLING ////////////////////////////////////////////////////////////
+    @include respond(phone) {
+        &--project {
+            height: auto;
+            position: relative;
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        }
+    
+        &__side {
+            height: auto;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        &__side--front {
+            box-shadow: none;
+        }
+    
+        &__side--back {
+            transform: rotateX(0);
+            
+            padding: 3rem 4rem;
+        }
+    
+        &--project:hover {
+            .post__side--front {
+                transform: rotateX(0);
+            }
+    
+            .post__side--back {
+                transform: rotateX(0);
+            }
+        }
+    
+    
+        &--project &__details {
+            margin-top: 1.5rem;
+        }
+    
+        //  Backside card
+        &__content-back {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+        }
+    
+        &__back-title {
+            display: none;
+        }
+    
+        &__back-icon {
+            font-size: 20rem;
+            color: rgba($color-white, 0.65);
+    
+            position: absolute;
+            top: 5rem;
+            right: -5rem;
+        }
+    }
+
+}

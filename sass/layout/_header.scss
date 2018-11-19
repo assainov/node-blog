@@ -1,0 +1,213 @@
+.header {
+    
+    &__navbar {
+        background-color: $color-navbar;
+        height: 5rem;
+        padding-top: 1rem;
+    }
+
+    &__logo-box {
+        float: left;
+        margin-left: 2rem;
+    }
+
+    &__logo-text {
+        &:link,
+        &:visited,
+        &:active {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__top-navigation {
+        float: right;
+        margin-right: 2rem;
+    }
+
+    &__top-list {
+        list-style: none;
+    }
+    
+    &__top-link {
+        &:link,
+        &:visited {
+            color: $color-grey-light-2;
+        }
+
+        &:hover {
+            color: $color-grey-light;
+        }
+    }
+
+    &__hero {
+        height: 30rem;
+        background: url('../img/header-bg.jpeg'),
+                    -webkit-gradient(linear, left top, right bottom, from($color-primary-2), to($color-primary-1));
+        background: url('../img/header-bg.jpeg'),
+                    -webkit-linear-gradient(left top, $color-primary-2, $color-primary-1);
+        background: url('../img/header-bg.jpeg'),
+                    -o-linear-gradient(left top, $color-primary-2, $color-primary-1);
+        background: url('../img/header-bg.jpeg'),
+                    linear-gradient(to right bottom, $color-primary-2, $color-primary-1);
+        background-blend-mode: screen;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+    &__bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 7rem;
+    }
+
+    &__avatar-box {
+        position: relative;
+        height: 7rem;
+    }
+
+    &__avatar {
+        position: absolute;
+        top: -16.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include respond(tab-port) {
+            top: -12rem;
+        }
+    }
+    &__image {
+        width: 260px;
+        border-radius: 50%;
+        border: 0.7rem solid $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+        @include respond(tab-port) {
+            width: 200px;
+        }
+
+        @include respond(phone) {
+            border-radius: 5px;
+            border: 2px solid $color-grey-light;
+        }
+    }
+
+    &__name-and-contact {
+        @include respond(phone) {
+            position: absolute;
+            top: 13rem;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            display: table;
+            vertical-align: middle;
+        }
+    }
+
+    &__name {
+        float: left;
+
+        @include respond(phone) {
+            display: table-cell;
+            margin-right: 1rem;
+        }
+    }
+
+    &__name-text {
+        color: $color-white;
+        font-size: 3.6rem;
+        line-height: 1;
+        text-shadow: 0 0.5rem 1rem rgba($color-black, 0.5);
+
+        
+        @include respond(phone) {
+            font-size: 3.6rem;
+            font-weight: $fw-middle;
+            color: $color-black;
+            text-shadow: none;
+        }
+    }
+
+    &__contact {
+        float: right;
+        margin-top: 0.5rem;
+
+        @include respond(phone) {
+            margin-top: 0;
+            display: table-cell;
+            margin-left: 1rem;
+        }
+    }
+
+    &__optional-me {
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &__navigation {
+        height: 5rem;
+        background-color: $color-white;
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+
+        @include respond(phone) {
+            height: 17rem;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        font-size: 0; /* Eliminate spacing between inline block elements */
+        text-align: justify;
+        width: 100%;
+        margin: 0;
+        padding: 0 3rem;
+        margin-top: 1.2rem;
+
+        @include respond(phone) {
+            border-top: 1px solid $color-grey-dark-1;
+            padding-top: 1.5rem;
+            margin-top: 9.7rem;
+        }
+
+        &:after {
+            content: 'abc';
+            display: inline-block;
+            width: 100%;
+            height: 0;
+        }
+    }
+
+    &__list-item {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: $fw-bold;
+    }
+
+    &__link {
+        &,
+        &:link,
+        &:visited {
+            color: $color-grey-dark-1;
+        }
+
+        &--active {
+            &:link,
+            &:visited {
+                color: $color-primary-1;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            color: $color-primary-1;
+        }
+    }
+}

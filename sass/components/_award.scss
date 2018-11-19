@@ -1,0 +1,21 @@
+.award {
+    text-align: center;
+
+    &__icon {
+        font-size: 4rem;
+        height: 5rem;
+        line-height: 1;
+        color: $color-primary-1;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: $fw-bold;
+    }
+
+    &__description {
+        font-size: 1.3rem;
+        color: $color-grey-dark-1;
+        font-weight: $fw-middle;
+    }
+}

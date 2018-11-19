@@ -1,0 +1,30 @@
+.footer {
+    background-color: $color-navbar;
+    height: 5rem;
+    padding-top: 1rem;
+
+    &__logo-box {
+        float: left;
+        margin-left: 2rem;
+    }
+
+    &__logo-text {
+        &:link,
+        &:visited,
+        &:active {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__copyright {
+        float: right;
+        margin-right: 2rem;
+        color: $color-white;
+    }
+}

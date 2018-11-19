@@ -1,0 +1,17 @@
+{
+  "name": "ilyas-assainov-portfolio-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "keywords": [],
+  "author": "Ilyas Assainov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.1",
+    "node-sass": "^4.9.4"
+  }
+}

@@ -1,0 +1,103 @@
+.timeline {
+    position: relative;
+    overflow: hidden;
+
+    &__event-box {
+        position: relative;
+        left: 6rem;
+
+        &:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -5rem;
+            top: 1.5rem;
+            width: 2px;
+            height: 150%;
+            background-color: $color-grey-light-2;
+        }
+
+        &::after {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            background-color: $color-white;
+            border: 2px solid $color-grey-light-2;
+            border-radius: 50%;
+            position: absolute;
+            top: 1rem;
+            left: -5.4rem;
+        }
+
+        &--present {
+            &::after {
+                background-color: $color-primary-1;
+                border: 2px solid $color-primary-1;
+            }
+        }
+    }
+
+    &__present {
+        position: absolute;
+        width: 90%;
+        height: 100%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -5rem;
+            top: 1.5rem;
+            width: 2px;
+            height: 150%;
+            background-color: $color-primary-1;
+        }
+
+        &::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            background-color: $color-primary-1;
+            border-radius: 50%;
+            border: 1rem solid rgba($color-primary-2, 0.5);
+			
+            -moz-background-clip: padding;     /* Firefox 3.6 */
+            -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+            background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+				
+            position: absolute;
+            top: 0.5rem;
+            left: -5.88rem;
+            z-index: 1;
+        }
+    }
+
+    &__content {
+        position: relative;
+        max-width: 90%;
+    }
+
+    &__period {
+        font-size: 3rem;
+        font-weight: $fw-regular;
+        color: $color-grey-dark-2;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    &__organization {
+        font-size: 2.4rem;
+        font-weight: $fw-middle;
+        color: $color-grey-dark-1;
+    }
+
+    &__role {
+        font-size: 1.6rem;
+        font-weight: $fw-bold;
+        color: $color-primary-1;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,135 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.4rem;
+        padding: 0.7rem 1.7rem;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+
+        &::after {
+            border: 0.1rem solid;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        transition: all 0.4s;
+        z-index: -1;
+    }
+
+    &--full-width {
+        width: 100%;
+        text-align: center;
+    }
+
+    &--primary {
+        background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+        border: none;
+        color: $color-white;
+
+        &::after {
+            background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+        }
+    }
+    &--large {
+        &,
+        &:link,
+        &:visited {
+            padding: 1.5rem 1.7rem;
+        }
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark-1;
+        border: 0.4rem solid $color-white;
+
+        &::after {
+            background: $color-white;
+        }
+    }
+
+    &--empty {
+        border: 0.4rem solid;
+
+        &--white {
+            &:link,
+            &:visited {
+
+                color: $color-white;
+                border-color: $color-white;
+    
+                &::after {
+                    border: 0.1rem solid $color-white;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                color: $color-primary-1;
+                border-color: $color-primary-1;
+            }
+        }
+    }
+
+    &--cta {
+        &,
+        &:link,
+        &:visited {
+            background: linear-gradient(to right, $color-secondary-2, $color-secondary-1);
+            border: none;
+            color: $color-white;
+    
+            &::after {
+                background: linear-gradient(to right, $color-secondary-2, $color-secondary-1);
+            }
+
+        }
+
+        &,
+        &:focus,
+        &:active {
+            border: none;
+
+            &::after {
+                border: none;
+            }
+        }
+    }
+
+    &--respond-phone {
+        @include respond(phone) {
+            background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+            border: none;
+            color: $color-white;
+        }
+    }
+}

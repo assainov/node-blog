@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    // This defines what 1rem is
+    font-size: 62.5%;
+
+    @include respond(big-desktop) {
+        font-size: 75%; //  1 rem = 12px, 12/16 = 75%
+    }
+
+    @include respond(tab-land) {
+        font-size: 62.5%; //     1 rem = 9px, 9/16 = 56.25%
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
+
+progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+     appearance: none;
+  
+    width: 43rem;
+    height: 0.5rem;
+  }

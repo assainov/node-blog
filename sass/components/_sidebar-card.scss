@@ -1,0 +1,92 @@
+.sidebar-card {
+    background-color: $color-white;
+    padding: 4rem 3rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+    @include respond(phone) {
+        margin: 0 2rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        margin-bottom: 2rem;
+        line-height: 1.2;
+    }
+
+    &__icon {
+        display: inline-block;
+    }
+
+    &__icon > .hydrated {
+        vertical-align: top !important;
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: 1.8rem;
+        font-weight: $fw-bold;
+        margin-left: 1rem;
+    }
+
+    &__content {
+
+        &--full-width {
+            margin: 0 -3rem -4rem -3rem;
+        }
+    }
+
+    &__row {
+        
+        @include clearfix;
+        &:not(:last-child) {
+            margin-bottom: 2%;
+        }
+    }
+
+    &__link {
+        float: left;
+        width: 32%;
+        &:not(:last-child) {
+            margin-right: 2%;
+        }
+    }
+
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+
+
+    //  Sidebar list About page
+    &__list {
+        list-style: none;
+        margin-left: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__list-item {
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__list-link {
+        &:link,
+        &:visited {
+            font-weight: $fw-middle;
+            color: $color-grey-dark-1;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-primary-1;
+            border-bottom: 2px solid $color-primary-1;
+        }
+    }
+    
+}

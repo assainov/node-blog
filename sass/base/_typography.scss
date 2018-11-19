@@ -1,0 +1,62 @@
+body {
+    font-family: "Spectral", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: $color-grey-dark-2;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+input::-webkit-input-placeholder {
+    font-family: "Spectral", sans-serif;
+}
+
+.heading-primary {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: $fw-bold;
+    background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+    display: inline;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.heading-primary-2 {
+    font-size: 2.4rem;
+    font-weight: $fw-regular;
+    background: linear-gradient(to right, $color-primary-2, $color-primary-1);
+    display: inline;
+    color: $color-white;
+}
+
+
+
+.paragraph {
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__highlight {
+        color: $color-primary-1;
+    }
+
+    &--grey {
+        color: $color-grey-dark-1;
+    }
+}
+
+.hint {
+    font-size: 1.4rem;
+    color: $color-grey-dark-1;
+    font-style: italic;
+}

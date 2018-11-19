@@ -1,0 +1,49 @@
+.hobby {
+    max-width: 30rem;
+    
+    @include respond(tab-land) {
+        max-width: 25rem;
+    }
+
+    @include respond(tab-port) {
+        max-width: 90%;
+    }
+
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+    
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__icon {
+        font-size: 5rem;
+        color: $color-primary-1;
+        height: 5rem;
+    }
+
+    &__name {
+        text-align: left;
+        font-size: 1.6rem;
+        margin-left: 1rem;
+    }
+
+    &__text {
+        margin-top: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $color-primary-1;
+            border-bottom: 2px solid transparent;
+        }
+        &:hover,
+        &:focus {
+            border-bottom: 2px solid $color-primary-1;
+        }
+    }
+}

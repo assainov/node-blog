@@ -1,0 +1,35 @@
+.reference {
+    width: 22rem;
+    padding: 4rem 3rem 2rem 3rem;
+    background-color: $color-grey-light;
+    position: relative;
+
+    &__image-box {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__image {
+        border-radius: 50%;
+        width: 6rem;
+    }
+
+    &__text {
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+    }
+
+    &__person {
+        color: $color-primary-1;
+        font-size: 1.6rem;
+        font-weight: $fw-bold;
+    }
+
+    &__relationship {
+        font-style: italic;
+    }
+}
